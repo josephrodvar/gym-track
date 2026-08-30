@@ -1,0 +1,2 @@
+-- No catalog data to seed anymore -- muscle groups are a fixed enum and
+-- logs are created via the app.

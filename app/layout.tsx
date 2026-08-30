@@ -1,0 +1,45 @@
+import type { Metadata, Viewport } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
+import Nav from "@/components/nav";
+import "./globals.css";
+
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+export const metadata: Metadata = {
+  title: "Gym Track",
+  description: "Personal gym tracking",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "Gym Track",
+  },
+  icons: {
+    apple: "/icons/icon-192.png",
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#eb6834",
+};
+
+export default function RootLayout({ children }: LayoutProps<"/">) {
+  return (
+    <html
+      lang="en"
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+    >
+      <body className="min-h-full flex flex-col bg-background text-foreground">
+        <div className="flex-1 pb-16">{children}</div>
+        <Nav />
+      </body>
+    </html>
+  );
+}
