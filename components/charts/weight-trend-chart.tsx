@@ -28,7 +28,7 @@ export default function WeightTrendChart({ points }: { points: WeightPoint[] }) 
 
   return (
     <ResponsiveContainer width="100%" height={220}>
-      <LineChart data={data} margin={{ top: 8, right: 12, left: -16, bottom: 0 }}>
+      <LineChart data={data} margin={{ top: 8, right: 12, left: 0, bottom: 0 }}>
         <XAxis
           dataKey="date"
           tickFormatter={formatDate}
