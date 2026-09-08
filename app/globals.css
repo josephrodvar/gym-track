@@ -46,3 +46,31 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
+
+/*
+ * Safari (including iOS) does not resolve CSS custom properties when they
+ * are set via SVG presentation attributes (e.g. fill="var(--x)") instead of
+ * an actual stylesheet rule or style attribute, so Recharts' inline
+ * fill/stroke props render invisibly there. Set chart colors here instead.
+ */
+.recharts-cartesian-axis-tick-value {
+  fill: var(--ink-muted);
+}
+
+.recharts-cartesian-axis-line {
+  stroke: var(--border);
+}
+
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: var(--border);
+}
+
+.recharts-line-curve {
+  stroke: var(--accent);
+}
+
+.recharts-dot {
+  fill: var(--accent);
+  stroke: none;
+}

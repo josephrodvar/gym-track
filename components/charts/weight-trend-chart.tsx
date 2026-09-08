@@ -32,13 +32,13 @@ export default function WeightTrendChart({ points }: { points: WeightPoint[] }) 
         <XAxis
           dataKey="date"
           tickFormatter={formatDate}
-          tick={{ fill: "var(--ink-muted)", fontSize: 11 }}
-          axisLine={{ stroke: "var(--border)" }}
+          tick={{ fontSize: 11 }}
+          axisLine
           tickLine={false}
         />
         <YAxis
           domain={["auto", "auto"]}
-          tick={{ fill: "var(--ink-muted)", fontSize: 11 }}
+          tick={{ fontSize: 11 }}
           axisLine={false}
           tickLine={false}
           width={40}
@@ -57,9 +57,8 @@ export default function WeightTrendChart({ points }: { points: WeightPoint[] }) 
         <Line
           type="monotone"
           dataKey="weight"
-          stroke="var(--accent)"
           strokeWidth={2}
-          dot={{ r: 3, fill: "var(--accent)", strokeWidth: 0 }}
+          dot={{ r: 3, strokeWidth: 0 }}
           activeDot={{ r: 5 }}
         />
       </LineChart>
