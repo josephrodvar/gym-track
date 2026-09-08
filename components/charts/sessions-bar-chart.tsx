@@ -26,16 +26,16 @@ export default function SessionsBarChart({
   return (
     <ResponsiveContainer width="100%" height={220}>
       <BarChart data={data} margin={{ top: 8, right: 12, left: -16, bottom: 0 }}>
-        <CartesianGrid stroke="var(--border)" vertical={false} />
+        <CartesianGrid vertical={false} />
         <XAxis
           dataKey="label"
-          tick={{ fill: "var(--ink-muted)", fontSize: 11 }}
-          axisLine={{ stroke: "var(--border)" }}
+          tick={{ fontSize: 11 }}
+          axisLine
           tickLine={false}
         />
         <YAxis
           allowDecimals={false}
-          tick={{ fill: "var(--ink-muted)", fontSize: 11 }}
+          tick={{ fontSize: 11 }}
           axisLine={false}
           tickLine={false}
           width={28}
@@ -53,13 +53,13 @@ export default function SessionsBarChart({
         <Bar
           dataKey="Heavy"
           stackId="sessions"
-          fill="var(--accent)"
+          className="fill-accent"
           radius={[0, 0, 0, 0]}
         />
         <Bar
           dataKey="Light"
           stackId="sessions"
-          fill="var(--ink-muted)"
+          className="fill-ink-muted"
           radius={[4, 4, 0, 0]}
         />
       </BarChart>
